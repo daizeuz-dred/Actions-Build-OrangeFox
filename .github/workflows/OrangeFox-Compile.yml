@@ -158,6 +158,14 @@ jobs:
         fi
         echo "DEVICE_TREE_URL=${DEVICE_TREE_URL}" >> $GITHUB_ENV
 
+    - name: 📦 Save Compiled Recovery Build as Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: OrangeFox_Build_Files
+        path: |
+          OrangeFox/fox_${{ inputs.MANIFEST_BRANCH }}/out/target/product/${{ inputs.DEVICE_NAME }}/OrangeFox*.img
+          OrangeFox/fox_${{ inputs.MANIFEST_BRANCH }}/out/target/product/${{ inputs.DEVICE_NAME }}/OrangeFox*.zip
+          
     - name: Upload to Release
       uses: softprops/action-gh-release@v2
       with:
