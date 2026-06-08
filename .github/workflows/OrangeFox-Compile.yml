@@ -33,6 +33,7 @@ on:
         - twrp_14.1
         - test
         - tmp
+        - hashmi
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
