@@ -93,7 +93,23 @@ jobs:
     - name: Build Environment
       run: |
         sudo apt install aria2 -y
-        git clone https://gitlab.com/OrangeFox/misc/scripts.git -b master
+
+        git config --global http.postBuffer 524288000
+        git config --global http.maxRequestBuffer 100M
+        git config --global http.version HTTP/1.1
+
+        for i in {1..5}; do
+          echo "Attempt $i: cloning OrangeFox scripts..."
+          git clone --depth=1 --branch master https://gitlab.com/OrangeFox/misc/scripts.git && break
+          rm -rf scripts
+          sleep 15
+        done
+
+        if [ ! -d scripts ]; then
+          echo "Failed to clone OrangeFox scripts"
+          exit 1
+        fi
+
         cd scripts
         sudo bash setup/android_build_env.sh
       
