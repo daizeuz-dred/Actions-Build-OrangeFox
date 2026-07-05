@@ -20,7 +20,7 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/ChimpanziCloud/android_device_motorola_vienna.git'
+        default: 'https://github.com/daizeuz-dred/twrp_device_realme_spaced.git'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
@@ -38,11 +38,11 @@ on:
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
-        default: 'device/motorola/vienna'
+        default: 'device/realme/spaced'
       DEVICE_NAME:
         description: 'Specify your Device Codename'
         required: true
-        default: 'vienna'
+        default: 'spaced'
       RELEASE_TYPE:
         description: 'Specify your Release Type'
         required: true
@@ -63,7 +63,7 @@ on:
       BUILD_TARGET:
         description: 'Specify your Build Target'
         required: true
-        default: 'vendorboot'
+        default: 'recovery'
         type: choice
         options:
         - boot
