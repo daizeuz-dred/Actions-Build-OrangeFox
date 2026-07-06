@@ -36,6 +36,7 @@ on:
         - manus
         - manus_1
         - 12.1
+        - 12.1.2
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
